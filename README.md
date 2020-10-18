@@ -1,4 +1,8 @@
 # Instagram clone
+
+## Author
+
+* **David Kiiru**
  
  <img src="./p.png">
 
