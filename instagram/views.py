@@ -38,6 +38,19 @@ def login_user(request):
 
 
 
+@login_required
+def image_form(request):
+
+    if request.method == 'POST': 
+        form = PostPictureForm(request.POST, request.FILES) 
+  
+        if form.is_valid():
+            form.save()
+            return redirect('landing') 
+    else: 
+        form = PostPictureForm() 
+    return render(request, 'image_form.html', {'form' : form}) 
+
 
 
 @login_required
