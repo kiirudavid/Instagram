@@ -1,0 +1,98 @@
+{% load bootstrap3 %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script src="https://kit.fontawesome.com/2ae247d80b.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+     
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+  {% endblock %}
+
+  <style>
+      .navbar{
+          padding-top: 2%;
+          background-color: #ffffff;
+          border: #ffffff;
+      }
+    .navbar-brand{
+       color:  #FF008C;
+      }
+    .btny{
+        color: #FF008C;
+    }
+    .container{
+        margin: 4%;
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+  </style>
+
+
+</head>
+<body>
+    
+<div class="container">
+
+
+        <div class="main">
+          <div class="container">
+            <div class="insta-nav">
+              <a href="{% url 'landing' %}">
+              <div class="home">
+                <p class="insta-icon"><i class="fab fa-instagram fa-3x"></i></p>
+                <h3 class="home-title">Insta</h3>
+              </div>
+              </a>
+              
+              <div class="insta-functions">
+                <p><a href="{% url 'image_form' %}"><i class="fas fa-plus fa-2x"></i></a></p>
+                
+                <p class="insta-heart"><a href="{% url 'landing' %}"><i class="far fa-heart fa-2x"></i></a></p>
+                <p><a href="{% url 'profile' %}"><i class="far fa-user fa-2x"></i></a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class="col-sm-6 col-md-6">
+            {% if user.is_authenticated %}
+            <ul>
+              <li class="dropdown">
+                <a href="{%url 'profile'%}" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                          <span class="caret"></span>
+                      </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="{%url 'landing'%}">Home</a>
+                  </li>
+                  <li>
+                    <a href="/accounts/password/change">Change Password</a>
+                  </li>
+                  <li>
+                    <a href="/logout">Logout</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            {% else %}
+            <li>
+              <a class='btn btn-default' href="{% url 'login' %}">Login</a>
+            </li>
+
+            {% endif %}
+          </div>
+
+</div>
+</body>
+</html>
