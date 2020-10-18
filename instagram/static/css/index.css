@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap');
 
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background-color: #f2f2f2;
 }
 
 *[role="form"] h2 { 
