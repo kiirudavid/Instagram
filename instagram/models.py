@@ -19,7 +19,11 @@ class Post(models.Model):
     def delete_post(self):
         self.delete()
 
-
+class Image(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to = 'ig/')
+    caption = models.CharField(max_length=300)
+    date_posted = models.DateField(default=timezone.now)
     
 
 class Comment(models.Model):
