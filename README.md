@@ -66,12 +66,14 @@ python manage.py makemigrations gallery
 Open the application on your browser `127.0.0.1:8000`.  
   
   
-## Technology used  
-  
-* [Python3.6](https://www.python.org/)  
-* [Django 2.2.9](https://docs.djangoproject.com/en/2.2/)  
+## Built With
+
+* [Python3.8](https://www.python.org/)  
+* [Django](https://www.djangoproject.com/) - web framework used
+* Javascript - For DOM(Document Object Manipulation) scripts
+* HTML - For building Mark Up pages/User Interface
+* CSS - For Styling User Interface
 * [Heroku](https://heroku.com)  
-* [Git](for version control)
   
   
 ## Known Bugs  
